@@ -22,4 +22,5 @@ RUN apt-get install -y gnupg wget curl unzip --no-install-recommends && \
     unzip /chromedriver/chromedriver* -d /chromedriver && \
     rm -f /chromedriver/chromedriver_linux64.zip
 
+ENV WALLABY_DRIVER=chrome
 ENV PATH=$PATH:/chromedriver
