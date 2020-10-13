@@ -1,0 +1,18 @@
+{
+    "name": "AppName Remote",
+    "dockerComposeFile": [
+        "../docker-compose.yml"
+    ],
+    "extensions": [
+        "jakebecker.elixir-ls",
+        "florinpatrascu.vscode-elixir-snippets",
+        "saratravi.elixir-formatter",
+        "royalmist.vscode-eex-format",
+        "sadesyllas.elixir-module-autoname",
+        "robbowen.synthwave-vscode",
+        "visualstudioexptteam.vscodeintellicode"
+    ],
+    "service": "app",
+    "workspaceFolder": "/workspace",
+    "shutdownAction": "stopCompose"
+}

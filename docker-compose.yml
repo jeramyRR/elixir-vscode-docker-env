@@ -1,0 +1,33 @@
+# ./docker-compose.yml
+
+version: '3.8'
+
+services: 
+    postgres:
+        image: postgres:13-alpine
+        container_name: app_remote_postgres
+        restart: always
+        environment: 
+            - POSTGRES_DB=postgres
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+        ports: 
+            - 15432:5432
+        volumes: 
+            - ./docker/data/postgres:/var/lib/postgres/data
+    app:
+        build:
+            context: ./docker/dev
+            dockerfile: Dockerfile
+        container_name: app_remote_app
+        command: >
+            mix ecto.setup
+        ports:
+            - 4000:4000
+        depends_on: 
+            - postgres
+        volumes: 
+            - .:/workspace
+            - ~/.gitconfig:/root/.gitconfig
+            - ~/.ssh:/root/.ssh
+        command: sleep infinity
