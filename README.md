@@ -10,6 +10,8 @@ Remember to change the app name in the following files:
 - docker-compose.yml (lines: 8, 22)
 - .gitignore (line 26)
 
+Note that the first time running this in a new project takes quite a bit of time for docker to download and install the images.
+
 ## Wallaby
 
 Chromedriver will be installed in the docker container so that you can use Wallaby for testing as well. I currently use the following in my config/test.exs.
