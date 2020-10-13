@@ -46,3 +46,9 @@ config :wallaby,
 # Print only warnings and errors during test
 config :logger, level: :warn
 ```
+
+# Known issues
+
+1. Sometimes VS Code will complain about the last line of the docker-compose.yml file after it's installed everything and is trying to start up. Closing VS Code and reopening it seems to fix the issue.
+
+2. On a new container you'll have to run mix ecto.create. It's not really an issue, but I sometimes forget and start to wonder why it complains about not being able to connect.
